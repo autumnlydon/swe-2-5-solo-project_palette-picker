@@ -1,13 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Palette Picker</title>
   </head>
   <body>
-    <div id="app"></div>
+    <main>
+      <h1>Palette Picker</h1>
+      
+      <section class="form-section">
+        <h2>Add a Palette</h2>
+        <form id="palette-form" aria-label="Create new palette">
+          <div class="form-group">
+            <label for="palette-title">Palette Title:</label>
+            <input type="text" id="palette-title" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="color1">Color #1:</label>
+            <input type="color" id="color1">
+          </div>
+          
+          <div class="form-group">
+            <label for="color2">Color #2:</label>
+            <input type="color" id="color2">
+          </div>
+          
+          <div class="form-group">
+            <label for="color3">Color #3:</label>
+            <input type="color" id="color3">
+          </div>
+          
+          <fieldset>
+            <legend>Temperature</legend>
+            <div class="radio-group">
+              <input type="radio" id="warm" name="temperature" value="warm">
+              <label for="warm">Warm</label>
+              
+              <input type="radio" id="neutral" name="temperature" value="neutral" checked>
+              <label for="neutral">Neutral</label>
+              
+              <input type="radio" id="cool" name="temperature" value="cool">
+              <label for="cool">Cool</label>
+            </div>
+          </fieldset>
+          
+          <button type="submit">Create the palette</button>
+        </form>
+      </section>
+
+      <section class="palettes-section">
+        <h2>Palettes</h2>
+        <ul id="palettes-list"></ul>
+      </section>
+    </main>
     <script type="module" src="/src/main.js"></script>
   </body>
-</html>
+</html> 
